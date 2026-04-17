@@ -1,25 +1,8 @@
-# Trabalho Prático - Semana 6
-
-Nessa atividade, como sempre, vamos evoluir o que foi feito na semana anterior. Fique atento para fazer o projeto da semana anterior e dar sequência nessa jornada.
-
-No trabalho dessa semana vamos alterar o projeto para que a responsividade da home-page seja feita, agora, com o framework Bootstrap.
-
-**IMPORTANTE 1:** Você deve alterar apenas os arquivos **`README.md`**, **`index.html`** e **`styles.css`**, podendo incluir outros arquivos como imagens na pasta **`images`**, caso necessário. Deixe todos os demais arquivos e pastas desse repositório inalterados. **PRESTE MUITA ATENÇÃO NISSO.**
-
 ## Informações Gerais
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
+- Nome: Henrique Santos de Souza
+- Matricula: 907454
+- Proposta de projeto escolhida: Organizações e Equipes
 - Breve descrição sobre seu projeto:
 
-## Print da versão responsiva com Bootstrap [DESKTOP]
-
-<<  COLOQUE A IMAGEM AQUI >>
-
-## Print da versão responsiva com Bootstrap [MOBILE] (*)
-
-<<  COLOQUE A IMAGEM AQUI >>
-
-
-(*) Utilize as ferramentas do desenvolvedor do seu navegador para colocar no modo reponsivo, escolha um celular qualquer e recarregue a página antes de tirar o print. 
+O projeto é um site chamado Trade Link, que conecta empresas e fornecedores. A ideia é mostrar projetos, equipe e facilitar a criação de contratos, com um visual fácil de usar.

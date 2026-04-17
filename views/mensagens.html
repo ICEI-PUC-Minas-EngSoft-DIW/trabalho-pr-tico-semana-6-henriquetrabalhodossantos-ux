@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens - TradeLink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/mensagens.css">
+</head>
+<body>
+    <div class="pagina-container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="TradeLink">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="inicial.html"><i class="fas fa-home"></i> Produtos</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="fornecedores.html"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="pedidos.html"><i class="fas fa-file-invoice"></i> Pedidos/Vendas</a></li>
+                    <li><a href="historico.html"><i class="fas fa-history"></i> Histórico</a></li>
+                    <li><a href="chat.html"><i class="fas fa-robot"></i> Chat IA</a></li>
+                    <li class="active"><a href="mensagens.html"><i class="fas fa-envelope"></i> Mensagens</a></li>
+                    <li><a href="categoria.html"><i class="fas fa-tags"></i> Categorias</a></li>
+                    <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                </ul>
+           </nav>
+        </div>
+
+        <div class="main-content">
+            <header>
+                <h1><i class="fas fa-envelope"></i> Mensagens</h1>
+                <div class="user-info">
+                    <span>TradeLink</span>
+                    <img src="https://ui-avatars.com/api/?name=User&background=38528D&color=fff&size=40" alt="Usuário">
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="messages-container">
+                    <div class="conversations-list">
+                        <div class="conversations-header">
+                            <h2>Conversas</h2>
+                            <button class="btn btn-primary" id="new-conversation">
+                                <i class="fas fa-plus"></i> Nova Conversa
+                            </button>
+                        </div>
+                        
+                        <div class="search-conversations">
+                            <input type="text" placeholder="Buscar conversas..." id="search-conversations">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        
+                        <div class="conversations" id="conversations-list">
+                            <!-- As conversas serão carregadas aqui via JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-area">
+                        <div class="conversation-header">
+                            <div class="current-contact" id="current-contact">
+                                <div class="contact-avatar" id="contact-avatar-clickable">
+                                    <img src="https://ui-avatars.com/api/?name=TradeLink&background=38528D&color=fff" alt="TradeLink">
+                                </div>
+                                <div class="contact-info">
+                                    <div class="contact-name">Selecione uma conversa</div>
+                                    <div class="contact-status">Clique em uma conversa para começar</div>
+                                </div>
+                            </div>
+                            <div class="conversation-actions" id="conversation-actions" style="display: none;">
+                                <button class="btn-icon" title="Informações" id="toggle-contact-info">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="messages" id="messages-container">
+                            <div class="empty-conversation" id="empty-conversation">
+                                <i class="fas fa-comments"></i>
+                                <p>Selecione uma conversa para ver as mensagens</p>
+                            </div>
+                        </div>
+                        
+                        <div class="message-input-container" id="message-input-container" style="display: none;">
+                            <div class="message-input">
+                                <textarea id="message-text" placeholder="Digite sua mensagem..." rows="1"></textarea>
+                            </div>
+                            <div class="message-send">
+                                <button id="send-message" class="btn-icon" title="Enviar mensagem">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-panel" id="contact-info-panel">
+                        <div class="contact-info-header">
+                            <h3>Informações do Contato</h3>
+                            <button class="btn-icon close-info" id="close-contact-info">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="contact-details">
+                            <div class="contact-avatar-large">
+                                <img src="https://ui-avatars.com/api/?name=TradeLink&background=38528D&color=fff&size=80" alt="TradeLink" id="contact-avatar-large">
+                            </div>
+                            
+                            <div class="contact-name-large" id="contact-name-large">TechSupply Ltda</div>
+                            <div class="contact-company" id="contact-company">Sistema de Mensagens</div>
+                            
+                            <div class="contact-info-section">
+                                <h4>Informações de Contato</h4>
+                                <div class="contact-info-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span id="contact-email">contato@techsupply.com.br</span>
+                                </div>
+                                <div class="contact-info-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span id="contact-phone">(31) 99999-0000</span>
+                                </div>
+                                <div class="contact-info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="contact-address">Belo Horizonte, MG</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="new-conversation-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nova Conversa</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="conversation-search">Buscar Contato:</label>
+                    <input type="text" id="conversation-search" placeholder="Digite o nome do contato...">
+                </div>
+                
+                <div class="contacts-list" id="contacts-list">
+                    <!-- Contatos serão carregados aqui -->
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary close-modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/script.js"></script>
+</body>
+</html>

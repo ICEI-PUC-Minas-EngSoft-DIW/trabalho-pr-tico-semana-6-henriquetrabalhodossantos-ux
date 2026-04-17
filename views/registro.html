@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../public/css/registro.css">
+    <script src="../public/js/script.js"></script>
+</head>
+
+<body>
+    <form id="register" method="POST" action="/cadastrar">
+        <input type="hidden" id="tipoCadastro" name="tipo_cadastro" value="fornecedor">
+
+        <p>Escolha seu tipo de cadastro</p>
+        <div class="typeSelector">
+            <div class="typeOption selected" data-type="fornecedor">Fornecedor</div>
+            <div class="typeOption" data-type="empresa">Empresa</div>
+        </div>
+
+        <div class="formGroup">
+            <label for="nomeCompleto" class="labelregis">Nome:</label>
+            <input id="nomeCompleto" name="nome_completo" class="inputregis" type="text" placeholder="Seu nome completo"
+                required>
+        </div>
+
+        <div class="formGroup">
+            <label for="email" class="labelregis">Email:</label>
+            <input id="email" name="email" class="inputregis" type="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="formGroup">
+            <label for="senha" class="labelregis">Senha:</label>
+            <div class="password-container">
+                <input id="senha" name="senha" type="password" class="inputregis" placeholder="Digite sua senha"
+                    required>
+                <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                    <svg class="eye-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path
+                            d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <label for="confirmarSenha" class="labelregis">Confirmar Senha:</label>
+            <div class="password-container">
+                <input id="confirmarSenha" name="confirmar_senha" type="password" class="inputregis"
+                    placeholder="Confirme sua senha" required>
+                <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                    <svg class="eye-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path
+                            d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="campoTroca">
+            <div class="formGroup">
+                <label for="cpf" class="labelregis">CPF:</label>
+                <input id="cpf" name="cpf" type="text" class="inputregis" placeholder="XXX.XXX.XXX-XX" maxlength="14" required>
+            </div>
+
+            <div class="checkboxGroup">
+                <input type="checkbox" id="termosCheckbox" name="aceita_termos" class="customCheckbox" required>
+                <label for="termosCheckbox" class="checkboxLabel">
+                    Li e aceito os <span class="linkModal" data-modal="termosDialog">Termos de Uso</span>
+                </label>
+            </div>
+            <div class="checkboxGroup">
+                <input type="checkbox" id="privacidadeCheckbox" name="aceita_privacidade" class="customCheckbox"
+                    required>
+                <label for="privacidadeCheckbox" class="checkboxLabel">
+                    Li e aceito a <span class="linkModal" data-modal="privacidadeDialog">Termos de Consentimento</span>
+                </label>
+            </div>
+
+            <div class="loginTem">
+                Já tem uma conta? <a class="loginSend" href="login.html">LOGIN</a>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn" disabled>CONCLUIR</button>
+        </div>
+    </form>
+
+    <dialog id="meuDialog">
+        <div class="modal-cabecalho">
+            <h2>Validação</h2>
+            <button class="fechar-modal" id="fecharModal">&times;</button>
+        </div>
+        <div class="modal-corpo">
+            <p id="resultado"></p>
+        </div>
+        <div class="modal-rodape">
+            <button class="modal-btn modal-btn-primario" id="confirmarModal">OK</button>
+        </div>
+    </dialog>
+
+    <dialog id="termosDialog">
+        <div class="modal-cabecalho">
+            <h2>Termos de Uso</h2>
+            <button class="fechar-modal">&times;</button>
+        </div>
+        <div class="modal-corpo">
+            <h1>TERMO DE USO DO TRADE LINK</h1>
+
+        <p>
+            Este Termo de Uso (“Termo”) é um acordo legal entre você, o(a) usuário(a) do sistema
+            “Trade Link”, e os desenvolvedores do Projeto Trade Link (doravante denominado “Trade
+            Link” ou “Nós”), uma plataforma que conecta empresas e fornecedores, automatizando a
+            criação e gestão de contratos de forma segura e eficiente.
+        </p>
+
+        <p>
+            Ao acessar ou utilizar o Trade Link, você manifesta sua concordância integral com este
+            Termo de Uso, com a Política de Privacidade e com a Lei Geral de Proteção de Dados
+            Pessoais (LGPD – Lei nº 13.709/2018). Se você não concordar com estes termos, não deverá
+            utilizar o sistema.
+        </p>
+
+        <h3>CLÁUSULA PRIMEIRA – DAS CONDIÇÕES GERAIS DE USO</h3>
+        <p>
+            O Trade Link é destinado a conectar empresas e fornecedores, permitindo o gerenciamento
+            automatizado de contratos, a comunicação direta entre as partes e o armazenamento seguro
+            de informações comerciais.
+        </p>
+
+        <h3>CLÁUSULA SEGUNDA – DA COLETA E USO DE DADOS PESSOAIS</h3>
+        <p>
+            O usuário declara estar ciente da coleta e uso dos seguintes dados pelo Trade Link,
+            utilizados exclusivamente para a operação da plataforma e melhoria contínua dos serviços:
+        </p>
+        <ul>
+            <li>Nome completo e CPF/CNPJ (identificação);</li>
+            <li>E-mail e telefone (comunicação e recuperação de acesso);</li>
+            <li>Dados empresariais (para geração de contratos e perfis comerciais);</li>
+            <li>Histórico de interações e transações (para auditoria e segurança).</li>
+        </ul>
+
+        <h3>CLÁUSULA TERCEIRA – FINALIDADE DA COLETA</h3>
+        <p>
+            A coleta de dados tem por finalidade garantir o funcionamento da plataforma, autenticação
+            de usuários, geração automática de contratos, comunicação entre empresas e fornecedores
+            e cumprimento das obrigações legais previstas na LGPD.
+        </p>
+
+        <h3>CLÁUSULA QUARTA – VEDAÇÕES DO USO</h3>
+        <p>
+            O usuário compromete-se a não utilizar o Trade Link para qualquer finalidade ilícita ou que
+            viole este Termo de Uso, incluindo:
+        </p>
+        <ul>
+            <li>Carregar conteúdo ilegal, difamatório ou prejudicial;</li>
+            <li>Acessar, alterar ou danificar contas de outros usuários;</li>
+            <li>Violar direitos de propriedade intelectual ou confidencialidade de terceiros.</li>
+        </ul>
+
+        <h3>CLÁUSULA QUINTA – DA PROTEÇÃO DOS DADOS</h3>
+        <p>
+            O Trade Link compromete-se a adotar medidas técnicas e administrativas adequadas em
+            conformidade com a LGPD e normas ISO/IEC 27001, 27701 e 29100, incluindo:
+        </p>
+        <ul>
+            <li>Criptografia dos dados armazenados;</li>
+            <li>Banco de dados seguro com controle de acesso restrito;</li>
+            <li>Políticas de segurança e resposta a incidentes.</li>
+        </ul>
+
+        <h3>CLÁUSULA SEXTA – DO COMPARTILHAMENTO DE DADOS</h3>
+        <p>Os dados não serão compartilhados com terceiros, exceto:</p>
+        <ul>
+            <li>Quando houver autorização expressa do titular;</li>
+            <li>Por obrigação legal ou ordem judicial;</li>
+            <li>Para suporte técnico limitado e controlado.</li>
+        </ul>
+
+        <h3>CLÁUSULA SÉTIMA – DOS DIREITOS DO TITULAR</h3>
+        <p>O usuário poderá solicitar, a qualquer momento:</p>
+        <ul>
+            <li>Exclusão da conta e dos dados pessoais;</li>
+            <li>Revogação do consentimento;</li>
+            <li>Correção ou atualização de informações;</li>
+            <li>Acesso às finalidades e formas de tratamento de seus dados.</li>
+        </ul>
+        <p><strong>Canal de contato:</strong> tradelink@gmail.com</p>
+
+        <h3>CLÁUSULA OITAVA – IDENTIFICAÇÃO DO RESPONSÁVEL (DPO)</h3>
+        <p>
+            Responsável pelo tratamento dos dados (DPO): Henrique Santos de Souza – Encarregado de
+            Proteção de Dados.
+        </p>
+        <p><strong>E-mail para contato:</strong> tradelink@gmail.com</p>
+
+        <h3>CLÁUSULA NONA – DA TRANSPARÊNCIA</h3>
+        <p>
+            O Trade Link garante total transparência sobre o tratamento dos dados pessoais. Os direitos
+            dos usuários serão atendidos no prazo máximo de 15 dias a partir da solicitação formal.
+        </p>
+
+        <h3>CLÁUSULA DÉCIMA – DISPOSIÇÕES GERAIS</h3>
+        <p>
+            Este Termo pode ser atualizado periodicamente para refletir mudanças legais ou
+            operacionais. O uso contínuo da plataforma após alterações implicará concordância com os
+            novos termos.
+        </p>
+
+        <h3>CLÁUSULA DÉCIMA PRIMEIRA – DO FORO</h3>
+        <p>
+            Fica eleito o foro da comarca de Belo Horizonte/MG para dirimir eventuais controvérsias
+            oriundas deste Termo.
+        </p>
+        </div>
+        <div class="modal-rodape">
+            <button class="modal-btn modal-btn-primario fechar-modal-btn">Entendi</button>
+        </div>
+    </dialog>
+
+    <dialog id="privacidadeDialog">
+        <div class="modal-cabecalho">
+            <h2>Termo de Consentimento</h2>
+            <button class="fechar-modal">&times;</button>
+        </div>
+        <div class="modal-corpo">
+            <h1>TERMO DE CONSENTIMENTO PARA TRATAMENTO DE DADOS PESSOAIS – TRADE LINK</h1>
+
+            <p>
+                Este Termo formaliza sua autorização expressa, livre e informada para o tratamento de seus
+                dados pessoais pelo Projeto Trade Link, conforme a Lei nº 13.709/2018 – Lei Geral de
+                Proteção de Dados (LGPD).
+            </p>
+
+            <h3>CLÁUSULA PRIMEIRA – DADOS TRATADOS</h3>
+            <p>O titular autoriza o Trade Link a tratar os seguintes dados pessoais:</p>
+            <ul>
+                <li>Nome completo e CPF/CNPJ;</li>
+                <li>E-mail e telefone;</li>
+                <li>Dados empresariais e contratuais;</li>
+                <li>Histórico de uso da plataforma e logs de acesso.</li>
+            </ul>
+
+            <h3>CLÁUSULA SEGUNDA – FINALIDADES DO TRATAMENTO</h3>
+            <p>Os dados pessoais serão utilizados exclusivamente para:</p>
+            <ul>
+                <li>Autenticação e acesso à plataforma;</li>
+                <li>Geração e armazenamento de contratos;</li>
+                <li>Comunicação entre usuários e suporte técnico;</li>
+                <li>Cumprimento de obrigações legais e auditorias de segurança.</li>
+            </ul>
+
+            <h3>CLÁUSULA TERCEIRA – NÃO COMPARTILHAMENTO</h3>
+            <p>
+                Os dados não serão compartilhados com terceiros sem consentimento expresso, salvo em
+                casos legais ou técnicos indispensáveis à operação segura da plataforma.
+            </p>
+
+            <h3>CLÁUSULA QUARTA – DIREITOS DO TITULAR</h3>
+            <p>O titular pode, a qualquer momento:</p>
+            <ul>
+                <li>Revogar este consentimento;</li>
+                <li>Solicitar a exclusão, correção ou atualização de dados;</li>
+                <li>Solicitar informações sobre as finalidades do tratamento;</li>
+                <li>Requerer a portabilidade dos dados.</li>
+            </ul>
+
+            <h3>CLÁUSULA QUINTA – IDENTIFICAÇÃO DO CONTROLADOR E DPO</h3>
+            <p><strong>Controlador e Encarregado (DPO):</strong> Henrique Santos de Souza</p>
+            <p><strong>E-mail:</strong> tradelink@gmail.com</p>
+
+            <h3>CLÁUSULA SEXTA – SEGURANÇA E CONFORMIDADE</h3>
+            <p>
+                O Trade Link adota medidas técnicas e administrativas de proteção de dados, conforme as
+                normas ISO/IEC 27001, 27701 e 29100, incluindo criptografia, controle de acesso e planos
+                de resposta a incidentes.
+            </p>
+
+            <h3>CLÁUSULA SÉTIMA – FORO</h3>
+            <p>
+                Fica eleito o foro da comarca de Belo Horizonte/MG para dirimir eventuais controvérsias
+                decorrentes deste Termo.
+            </p>
+        </div>
+        <div class="modal-rodape">
+            <button class="modal-btn modal-btn-primario fechar-modal-btn">Entendi</button>
+        </div>
+    </dialog>
+    <!-- AUTO-INJECT:LS-FLOW -->
+    <script>
+
+        // AUTO-INJECT: Registro -> LocalStorage -> redirect
+        (function () {
+            const form = document.getElementById("register");
+            if (form) {
+                form.addEventListener("submit", function (e) {
+                    
+                    const tipo = document.getElementById("tipoCadastro")?.value || "fornecedor";
+                    const nome = document.getElementById("nomeCompleto")?.value || "";
+                    const email = document.getElementById("email")?.value || "";
+                    const senha = document.getElementById("senha")?.value || "";
+                    const cpf = document.getElementById("cpf")?.value || "";
+                    if (!nome || !email || !senha) {
+                        alert("Preencha nome, email e senha.");
+                        return;
+                    }
+                });
+
+                // Botões de seleção de tipo (se existirem)
+                document.querySelectorAll(".typeOption").forEach(el => {
+                    el.addEventListener("click", () => {
+                        document.querySelectorAll(".typeOption").forEach(x => x.classList.remove("selected"));
+                        el.classList.add("selected");
+                        const type = el.getAttribute("data-type") || "fornecedor";
+                        const hidden = document.getElementById("tipoCadastro");
+                        if (hidden) hidden.value = type;
+                    });
+                });
+            }
+        })();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../public/css/login.css">
+    <script src="../public/js/script.js"></script>
+</head>
+<body>
+    <form id="login" method="POST" action="logar">
+        <div class="formGroup">
+            <label for="documento" class="labelregis">CPF/CNPJ:</label>
+            <input type="text" class="inputregis" id="documento" name="documento" 
+                   placeholder="XXX.XXX.XXX-XX ou XX.XXX.XXX/0001-XX" 
+                   oninput="formatarDocumento(this)" maxlength="18" required>
+        </div>
+        
+        <div class="formGroup">
+            <label for="senha" class="labelregis">Senha:</label>
+            <div class="password-container">
+                <input id="senha" name="senha" type="password" class="inputregis" 
+                       placeholder="Digite sua senha" required minlength="6">
+                <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                    <svg class="eye-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="loginTem">
+            Não tem uma conta? <a class="loginSend" href="registro.html">Registre-se</a>
+            <a href="inicial.html">html</a>
+        </div>
+       
+        <button type="submit" class="submit-btn">ENTRAR</button>
+    </form>
+
+    <dialog id="meuDialog">
+        <div class="modal-cabecalho">
+            <h2>Validação</h2>
+            <button class="fechar-modal" id="fecharModal">&times;</button>
+        </div>
+        <div class="modal-corpo">
+            <p id="resultado"></p>
+        </div>
+        <div class="modal-rodape">
+            <button class="modal-btn modal-btn-primario" id="confirmarModal">OK</button>
+        </div>
+    </dialog>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorias - TradeLink</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../public/css/categoria.css">
+</head>
+
+<body>
+  <div class="pagina-container">
+    <div class="sidebar">
+      <div class="logo">
+        <img src="../fornecedores/logo.png" alt="TradeLink">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="inicial.html"><i class="fas fa-home"></i> Produtos</a></li>
+          <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+          <li><a href="fornecedores.html"><i class="fas fa-user"></i> Perfil</a></li>
+          <li><a href="pedidos.html"><i class="fas fa-file-invoice"></i> Pedidos/Vendas</a></li>
+          <li><a href="historico.html"><i class="fas fa-history"></i> Histórico</a></li>
+          <li><a href="chat.html"><i class="fas fa-robot"></i> Chat IA</a></li>
+          <li><a href="mensagens.html"><i class="fas fa-envelope"></i> Mensagens</a></li>
+          <li class="active"><a href="categoria.html"><i class="fas fa-tags"></i> Categorias</a></li>
+          <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <h1><i class="fas fa-tags"></i> Categorias</h1>
+        <div class="user-info">
+          <span>TradeLink</span>
+          <img src="images/profile.jpg" alt="Usuário">
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="search-section">
+          <div class="search-wrap">
+            <input class="search" placeholder="Pesquisar produtos..." aria-label="Pesquisar">
+            <i class="fas fa-search search-icon"></i>
+          </div>
+        </div>
+
+        <div class="main-layout">
+          <aside class="filtros">
+            <h3><i class="fas fa-filter"></i> Filtros</h3>
+
+            <div class="filter-section">
+              <h4><i class="fas fa-list"></i> Categoria</h4>
+              <select id="categoria-select" class="filter-select">
+                <option value="eletronicos" selected>Eletrônicos</option>
+                <option value="roupas">Roupas</option>
+                <option value="casa">Casa e Jardim</option>
+                <option value="esportes">Esportes</option>
+                <option value="livros">Livros</option>
+              </select>
+            </div>
+
+            <div class="filter-section">
+              <h4><i class="fas fa-dollar-sign"></i> Preço</h4>
+              <div class="price-range">
+                <input type="number" id="preco-min" placeholder="Min" min="0" class="price-input">
+                <span>até</span>
+                <input type="number" id="preco-max" placeholder="Max" min="0" class="price-input">
+              </div>
+              <button id="aplicar-preco" class="filter-btn"><i class="fas fa-check"></i> Aplicar</button>
+            </div>
+
+            <div class="filter-section">
+              <h4><i class="fas fa-boxes"></i> Quantidade</h4>
+              <div class="quantity-range">
+                <input type="number" id="qtd-min" placeholder="Min" min="0" class="quantity-input">
+                <span>até</span>
+                <input type="number" id="qtd-max" placeholder="Max" min="0" class="quantity-input">
+              </div>
+              <button id="aplicar-qtd" class="filter-btn"><i class="fas fa-check"></i> Aplicar</button>
+            </div>
+
+            <div class="filter-section">
+              <h4><i class="fas fa-star"></i> Outros</h4>
+              <div class="filter-group">
+                <label><input type="checkbox" id="promocoes"> <i class="fas fa-percentage"></i> Promoções</label>
+                <label><input type="checkbox" id="frete-gratis"> <i class="fas fa-shipping-fast"></i> Frete
+                  grátis</label>
+                <label><input type="checkbox" id="mais-vendidos"> <i class="fas fa-fire"></i> Mais vendidos</label>
+              </div>
+            </div>
+          </aside>
+
+          <section class="conteudo">
+            <h2 id="cat_title"><i class="fas fa-laptop" id="cat_icon"></i> Categoria: <span id="cat_name">Eletrônicos</span></h2>
+            <div class="produtos-grid" id="produtos-container">
+              <div class="produto" style="cursor: pointer;" onclick="window.location.href='produto.html'">
+                <div class="imagem"></div>
+                <div class="info">
+                  <p class="nome">Notebook Pro 15</p>
+                  <p class="preco">R$ 3.499,00</p>
+                  <p class="descricao">Notebook com processador i7, 16GB RAM, SSD 512GB...</p>
+                  <p class="disponibilidade" style="color: green;">Disponível</p>
+                </div>
+              </div>
+              <div class="produto" style="cursor: pointer;" onclick="window.location.href='produto.html'">
+                <div class="imagem"></div>
+                <div class="info">
+                  <p class="nome">Monitor 27" 4K</p>
+                  <p class="preco">R$ 2.150,00</p>
+                  <p class="descricao">Monitor UHD com painel IPS, 144Hz, HDR400...</p>
+                  <p class="disponibilidade" style="color: green;">Disponível</p>
+                </div>
+              </div>
+              <div class="produto" style="cursor: pointer;" onclick="window.location.href='produto.html'">
+                <div class="imagem"></div>
+                <div class="info">
+                  <p class="nome">Teclado Mecânico RGB</p>
+                  <p class="preco">R$ 420,00</p>
+                  <p class="descricao">Teclado mecânico com switches blue, retroiluminado...</p>
+                  <p class="disponibilidade" style="color: red;">Indisponível</p>
+                </div>
+              </div>
+              <div class="produto" style="cursor: pointer;" onclick="window.location.href='produto.html'">
+                <div class="imagem"></div>
+                <div class="info">
+                  <p class="nome">Mouse Sem Fio</p>
+                  <p class="preco">R$ 189,00</p>
+                  <p class="descricao">Mouse ergônomico sem fio, 2400 DPI, bat. 12 meses...</p>
+                  <p class="disponibilidade" style="color: green;">Disponível</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/categoria.js"></script>
+</body>
+
+</html>

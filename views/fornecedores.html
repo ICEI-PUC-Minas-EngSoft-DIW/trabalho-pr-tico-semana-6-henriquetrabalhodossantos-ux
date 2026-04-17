@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Fornecedor - TradeLink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/fornecedores.css">
+</head>
+
+<body>
+    <div class="pagina-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="TradeLink">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="inicial.html"><i class="fas fa-home"></i> Produtos</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li class="active"><a href="fornecedores.html"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="pedidos.html"><i class="fas fa-file-invoice"></i> Pedidos/Vendas</a></li>
+                    <li><a href="historico.html"><i class="fas fa-history"></i> Histórico</a></li>
+                    <li><a href="chat.html"><i class="fas fa-robot"></i> Chat IA</a></li>
+                    <li><a href="mensagens.html"><i class="fas fa-envelope"></i> Mensagens</a></li>
+                    <li><a href="categoria.html"><i class="fas fa-tags"></i> Categorias</a></li>
+                    <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1><i class="fas fa-user"></i> Perfil do Fornecedor</h1>
+                <div class="user-info">
+                    <span id="header-user-name">TradeLink</span>
+                    <img id="header-user-pic" src="images/profile.jpg" alt="Usuário">
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Banner e Avatar -->
+                <div class="profile-container">
+                    <div class="profile-banner">
+                        <img id="banner-image" src="images/banner.jpg" alt="Banner">
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-avatar">
+                            <img id="avatar-image" src="images/foto.jpg" alt="Avatar">
+                        </div>
+                        <div class="profile-details">
+                            <h1 class="profile-name" id="profile-name">TechSupply Ltda</h1>
+                            <div class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="profile-location">Belo Horizonte, MG</span>
+                            </div>
+                            <p class="profile-description" id="profile-description">Fornecedora de equipamentos de informática e eletrônicos para empresas desde 2010.</p>
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value" id="products-count">12</span>
+                                    <span class="stat-label">Produtos</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">32</span>
+                                    <span class="stat-label">Pedidos</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.8</span>
+                                    <span class="stat-label">Avaliação</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário de Edição -->
+                <form id="formPerfil" method="POST" action="updateDados">
+                    <div class="form-section">
+                        <h2>Informações Pessoais</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fornecedor-nome">Nome:</label>
+                                <input id="fornecedor-nome" name="nome_fantasia" type="text" value="TechSupply Ltda" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fornecedor-email">Email:</label>
+                                <input id="fornecedor-email" name="email" type="email" value="contato@techsupply.com.br" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fornecedor-cpf">CPF/CNPJ:</label>
+                                <input disabled id="fornecedor-cpf" name="cnpj" type="text" value="12.345.678/0001-99" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fornecedor-local">Localização:</label>
+                                <input id="fornecedor-local" name="localizacao" type="text" value="Belo Horizonte, MG" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fornecedor-telefone">Telefone:</label>
+                                <input id="fornecedor-telefone" name="telefone" type="tel" value="(31) 99999-0000" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Descrição do Negócio</h2>
+                        <div class="form-group">
+                            <label for="fornecedor-descricao">Descreva seu negócio:</label>
+                            <textarea id="fornecedor-descricao" name="descricao" placeholder="Descreva seu negócio" required>Fornecedora de equipamentos de informática e eletrônicos para empresas desde 2010.</textarea>
+                        </div>
+                    </div>
+
+                    <!-- Seção de Produtos -->
+
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-btn">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="save-btn">
+                            <span id="submit-text">Salvar Alterações</span>
+
+                        </button>
+                    </div>
+                </form>
+                <div class="form-section">
+                        <h2>Produtos do Fornecedor</h2>
+                        <div class="products-section">
+                            <div class="products-carousel">
+                                <button class="carousel-button carousel-button-prev"><i class="fas fa-chevron-left"></i></button>
+                                <div class="carousel-container">
+                                    <div class="carousel-track">
+                                        <div class="product-card">
+                                            <div class="product-image"><img src="https://via.placeholder.com/250x150?text=Notebook" alt="Notebook Pro 15"></div>
+                                            <div class="product-info">
+                                                <h3>Notebook Pro 15</h3>
+                                                <p class="product-description">Notebook com processador i7, 16GB RAM</p>
+                                                <p class="product-price">R$ 3.499,00</p>
+                                                <p class="product-category">Eletrônicos</p>
+                                                <div class="product-actions">
+                                                    <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> Ver</button>
+                                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i> Editar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-card">
+                                            <div class="product-image"><img src="https://via.placeholder.com/250x150?text=Monitor" alt="Monitor 27"></div>
+                                            <div class="product-info">
+                                                <h3>Monitor 27" 4K</h3>
+                                                <p class="product-description">Monitor UHD com painel IPS, 144Hz</p>
+                                                <p class="product-price">R$ 2.150,00</p>
+                                                <p class="product-category">Eletrônicos</p>
+                                                <div class="product-actions">
+                                                    <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> Ver</button>
+                                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i> Editar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-button carousel-button-next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <button class="btn btn-primary" id="add-product-btn"><i class="fas fa-plus"></i> Adicionar Produto</button>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+    <!-- Modal para Upload de Imagem -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="image-modal-title">Alterar Imagem</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Selecionar imagem:</label>
+                    <input type="file" id="image-upload" accept="image/*">
+                </div>
+                <div id="image-preview-container" style="display: none;">
+                    <label>Pré-visualização:</label>
+                    <div id="image-preview" style="max-width: 100%; max-height: 300px; margin-top: 10px;"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-image-btn">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="save-image-btn">Salvar Imagem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Adicionar/Editar Produto -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="product-modal-title">Adicionar Produto</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="formProduct" action="cadastrarProduto" method="POST">
+                        <div class="form-group">
+                            <label for="product-name">Nome do Produto:</label>
+                            <input id="product-name" type="text" name="nome_produto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-description">Descrição:</label>
+                            <textarea id="product-description" name="descricao" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-price">Preço (R$):</label>
+                            <input id="product-price" type="number" step="0.01" name="preco" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria">Categoria:</label>
+                            <select id="categoria" name="categoria" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="eletronicos">Eletrônicos</option>
+                                <option value="roupas">Roupas</option>
+                                <option value="alimentos">Alimentos</option>
+                                <option value="livros">Livros</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-image">Imagem do Produto:</label>
+                            <input type="file" id="product-image" accept="image/*">
+                            <div id="product-image-preview" style="margin-top: 10px; display: none;">
+                                <img id="product-preview-img" src="#" alt="Preview"
+                                    style="max-width: 100%; max-height: 200px;">
+                            </div>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="cancel-product-btn">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="save-product-btn">Salvar Produto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Produto -->
+    <form id="formEditProduct" method="POST">
+        <div id="edit-product-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Editar Produto</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="edit-product-id" name="id_produto">
+                    <div class="form-group">
+                        <label for="edit-product-name">Nome do Produto:</label>
+                        <input id="edit-product-name" type="text" name="nome_produto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-product-description">Descrição:</label>
+                        <textarea id="edit-product-description" name="descricao" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-product-price">Preço (R$):</label>
+                        <input id="edit-product-price" type="number" step="0.01" name="preco" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-categoria">Categoria:</label>
+                        <select id="edit-categoria" name="categoria" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="eletronicos">Eletrônicos</option>
+                            <option value="roupas">Roupas</option>
+                            <option value="alimentos">Alimentos</option>
+                            <option value="livros">Livros</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="fecharModalEdicao()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Modal de Visualização/Edição do Produto -->
+    <div id="product-view-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="product-view-title">Detalhes do Produto</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="product-view-content">
+                    <!-- Conteúdo será preenchido via JavaScript -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
+                <button type="button" class="btn btn-primary" onclick="editarProduto()">Editar</button>
+                <button type="button" class="btn btn-danger" onclick="excluirProduto()">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação de Exclusão -->
+    <div id="delete-confirm-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirmar Exclusão</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir este produto?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-delete-btn">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete-btn">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Operação realizada com sucesso!</span>
+    </div>
+
+</body>
+
+</html>

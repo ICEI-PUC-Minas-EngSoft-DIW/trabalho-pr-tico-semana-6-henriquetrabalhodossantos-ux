@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trade Link - Início</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../public/css/inicial.css">
+</head>
+
+<body>
+  <div class="pagina-container">
+    <div class="sidebar">
+      <div class="logo">
+        <img src="images/logo.png" alt="TradeLink">
+      </div>
+      <nav>
+        <ul>
+          <li class="active"><a href="inicial.html"><i class="fas fa-home"></i> Produtos</a></li>
+          <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+          <li><a href="fornecedores.html"><i class="fas fa-user"></i> Perfil</a></li>
+          <li><a href="pedidos.html"><i class="fas fa-file-invoice"></i> Pedidos/Vendas</a></li>
+          <li><a href="historico.html"><i class="fas fa-history"></i> Histórico</a></li>
+          <li><a href="chat.html"><i class="fas fa-robot"></i> Chat IA</a></li>
+          <li><a href="mensagens.html"><i class="fas fa-envelope"></i> Mensagens</a></li>
+          <li><a href="categoria.html"><i class="fas fa-tags"></i> Categorias</a></li>
+          <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <h1><i class="fas fa-home"></i> Trade Link - Conectando Negócios</h1>
+        <div class="user-info">
+          <span>TradeLink</span>
+          <img src="images/profile.jpg" alt="Usuário">
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Seção de Boas-vindas -->
+        <section class="secao-boas-vindas">
+          <div class="boas-vindas-conteudo">
+            <h1 class="boas-vindas-titulo">Conecte-se com os Melhores Fornecedores</h1>
+            <p class="boas-vindas-subtitulo">Descubra produtos de qualidade e estabeleça parcerias comerciais duradouras na
+              maior plataforma B2B do Brasil</p>
+            <div class="boas-vindas-numeros">
+              <div class="stat">
+                <span class="stat-number">15.000+</span>
+                <a href="login.html">LOGIN</a>
+                <span class="stat-label">Fornecedores</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">50.000+</span>
+                <span class="stat-label">Produtos</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">R$ 2.5M+</span>
+                <span class="stat-label">Negociados/mês</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+          <div class="search-container">
+            <h2><i class="fas fa-search"></i> Encontre o que precisa</h2>
+            <div class="search-bar">
+              <input type="text" placeholder="Buscar produtos, fornecedores ou categorias..." class="main-search">
+              <button class="search-btn"><i class="fas fa-search"></i> Buscar</button>
+            </div>
+            <div class="quick-categories">
+              <span>Categorias populares:</span>
+              <a href="categoria" class="category-tag"><i class="fas fa-laptop"></i> Eletrônicos</a>
+              <a href="categoria" class="category-tag"><i class="fas fa-tshirt"></i> Roupas</a>
+              <a href="categoria" class="category-tag"><i class="fas fa-home"></i> Casa & Jardim</a>
+              <a href="categoria" class="category-tag"><i class="fas fa-tools"></i> Ferramentas</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Produtos em Destaque -->
+        <section class="section featured-products">
+          <div class="section-header">
+            <h2><i class="fas fa-fire"></i> Produtos em Destaque</h2>
+            <a href="categoria" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <div class="carousel-wrap centered">
+            <button class="arrow prev" aria-label="Anterior">&#10094;</button>
+
+            <div class="carousel" data-role="carousel">
+              <div class="track">
+                <article class="product-card" onclick="window.location.href='produto.html'">
+                  <div class="product-info">
+                    <h4>Notebook Pro 15</h4>
+                    <p class="supplier">TechSupply Ltda</p>
+                    <div class="price">R$ 3.499,00</div>
+                    <div class="rating"><span class="stars">★★★★★</span><span class="reviews">(127)</span></div>
+                  </div>
+                </article>
+                <article class="product-card" onclick="window.location.href='produto.html'">
+                  <div class="product-info">
+                    <h4>Cadeira Ergonômica</h4>
+                    <p class="supplier">MóveisWork S.A.</p>
+                    <div class="price">R$ 890,00</div>
+                    <div class="rating"><span class="stars">★★★★☆</span><span class="reviews">(84)</span></div>
+                  </div>
+                </article>
+                <article class="product-card" onclick="window.location.href='produto.html'">
+                  <div class="product-info">
+                    <h4>Monitor 27" 4K</h4>
+                    <p class="supplier">DisplayBR</p>
+                    <div class="price">R$ 2.150,00</div>
+                    <div class="rating"><span class="stars">★★★★★</span><span class="reviews">(56)</span></div>
+                  </div>
+                </article>
+                <article class="product-card" onclick="window.location.href='produto.html'">
+                  <div class="product-info">
+                    <h4>Teclado Mecânico</h4>
+                    <p class="supplier">GamerGear</p>
+                    <div class="price">R$ 420,00</div>
+                    <div class="rating"><span class="stars">★★★★☆</span><span class="reviews">(203)</span></div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <button class="arrow next" aria-label="Próximo">&#10095;</button>
+          </div>
+        </section>
+
+        <!-- Fornecedores Verificados -->
+        <section class="section verified-suppliers">
+          <div class="section-header">
+            <h2><i class="fas fa-shield-alt"></i> Fornecedores Verificados</h2>
+            <a href="fornecedores" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <div class="carousel-wrap centered small">
+            <button class="arrow prev" aria-label="Anterior fornecedores">&#10094;</button>
+
+            <div class="carousel" data-role="carousel">
+              <div class="track">
+                <div class="supplier-card">
+                  <div class="supplier-avatar"><div class="verified-badge"><i class="fas fa-check-circle"></i></div></div>
+                  <div class="supplier-info">
+                    <h4>TechSupply Ltda</h4>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Belo Horizonte, MG</p>
+                    <div class="supplier-stats"><span class="stat">★ 4.8</span><span class="stat">42 produtos</span></div>
+                    <div class="categories"><span class="category">Eletrônicos</span><span class="category">Informática</span></div>
+                  </div>
+                </div>
+                <div class="supplier-card">
+                  <div class="supplier-avatar"><div class="verified-badge"><i class="fas fa-check-circle"></i></div></div>
+                  <div class="supplier-info">
+                    <h4>MóveisWork S.A.</h4>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    <div class="supplier-stats"><span class="stat">★ 4.5</span><span class="stat">28 produtos</span></div>
+                    <div class="categories"><span class="category">Móveis</span><span class="category">Escritório</span></div>
+                  </div>
+                </div>
+                <div class="supplier-card">
+                  <div class="supplier-avatar"></div>
+                  <div class="supplier-info">
+                    <h4>AgroFornece</h4>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Uberlândia, MG</p>
+                    <div class="supplier-stats"><span class="stat">★ 4.2</span><span class="stat">15 produtos</span></div>
+                    <div class="categories"><span class="category">Alimentos</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="arrow next" aria-label="Próximo fornecedores">&#10095;</button>
+          </div>
+        </section>
+
+
+
+        <!-- Seção de Chamada para Ação -->
+        <section class="secao-chamada-acao">
+          <div class="chamada-acao-conteudo">
+            <h2>Pronto para começar?</h2>
+            <p>Junte-se a milhares de empresas que já encontraram seus fornecedores ideais</p>
+            <div class="chamada-acao-botoes">
+              <a href="registro" class="btn btn-primary btn-large">
+                <i class="fas fa-user-plus"></i> Cadastre-se Grátis
+              </a>
+              <a href="categoria" class="btn btn-secondary btn-large">
+                <i class="fas fa-search"></i> Explorar Produtos
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="contacts">
+        <h4>Contatos</h4>
+        <p>Email: contato@exemplo.com | Tel: (31) 99999-9999</p>
+        <div class="socials">
+          <a href="#" aria-label="facebook">Facebook</a>
+          <a href="#" aria-label="instagram">Instagram</a>
+          <a href="#" aria-label="linkedin">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="about">
+        <h4>Nossa história</h4>
+        <p>
+          A tradelink nasceu em 2018 como uma pequena iniciativa para conectar artesãos locais a compradores urbanos.
+          Hoje somos uma plataforma dedicada à qualidade, sustentabilidade e colaboração. Trabalhamos com centenas de
+          fornecedores independentes — cada peça conta uma história e ajudamos essas histórias a chegar onde merecem.
+        </p>
+      </div>
+    </div>
+    <div class="copyright">© 2025 tradelink — Todos os direitos reservados</div>
+  </footer>
+
+  <script src="../public/js/script.js"></script>
+</body>
+
+</html>

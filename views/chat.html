@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat IA - TradeLink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/chat.css">
+</head>
+<body>
+
+    <div class="pagina-container">
+        <!-- Barra lateral -->
+         <div class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="TradeLink">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="inicial.html"><i class="fas fa-home"></i> Produtos</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="fornecedores.html"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="pedidos.html"><i class="fas fa-file-invoice"></i> Pedidos/Vendas</a></li>
+                    <li><a href="historico.html"><i class="fas fa-history"></i> Histórico</a></li>
+                    <li class="active"><a href="chat.html"><i class="fas fa-robot"></i> Chat IA</a></li>
+                    <li><a href="mensagens.html"><i class="fas fa-envelope"></i> Mensagens</a></li>
+                    <li><a href="categoria.html"><i class="fas fa-tags"></i> Categorias</a></li>
+                    <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                </ul>
+           </nav>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content">
+            <header>
+                <h1><i class="fas fa-robot"></i> Chat IA</h1>
+            </header>
+
+            <div class="conversation-area">
+                <div class="messages" id="messages-container">
+                    <!-- Mensagens aparecerão aqui -->
+                </div>
+
+                <div class="message-input-container">
+                    <textarea id="message-text" placeholder="Digite sua mensagem..." rows="1"></textarea>
+                    <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/script.js"></script>
+</body>
+</html>

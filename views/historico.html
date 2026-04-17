@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico - TradeLink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/historico.css">
+</head>
+<body>
+    <div class="pagina-container">
+        <!-- Sidebar (igual à página de pedidos) -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="TradeLink">
+            </div>
+            <nav>
+                <ul>
+          <li><a href="inicial.html"><i class="fas fa-home"></i> Produtos</a></li>
+          <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+          <li><a href="fornecedores.html"><i class="fas fa-user"></i> Perfil</a></li>
+          <li><a href="pedidos.html"><i class="fas fa-file-invoice"></i> Pedidos/Vendas</a></li>
+          <li class="active"><a href="historico.html"><i class="fas fa-history"></i> Histórico</a></li>
+          <li><a href="chat.html"><i class="fas fa-robot"></i> Chat IA</a></li>
+          <li><a href="mensagens.html"><i class="fas fa-envelope"></i> Mensagens</a></li>
+          <li><a href="categoria.html"><i class="fas fa-tags"></i> Categorias</a></li>
+          <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+        </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1><i class="fas fa-history"></i> Histórico de Compras/Vendas</h1>
+                <div class="user-info">
+                    <span>Empresa XYZ</span>
+                    <img src="profile.jpg" alt="Usuário">
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Filtros e Busca -->
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="year-filter"><i class="fas fa-calendar"></i> Ano:</label>
+                        <select id="year-filter">
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="type-filter"><i class="fas fa-exchange-alt"></i> Tipo:</label>
+                        <select id="type-filter">
+                            <option value="all">Todos</option>
+                            <option value="purchase">Compras</option>
+                            <option value="sale">Vendas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-group">
+                        <input type="text" placeholder="Buscar no histórico..." id="search-input">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Resumo Financeiro -->
+                <div class="financial-summary">
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="summary-content">
+                            <span class="summary-label">Total em Compras</span>
+                            <span class="summary-value" id="total-purchases">R$ 0,00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-cash-register"></i>
+                        </div>
+                        <div class="summary-content">
+                            <span class="summary-label">Total em Vendas</span>
+                            <span class="summary-value" id="total-sales">R$ 0,00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="summary-content">
+                            <span class="summary-label">Saldo</span>
+                            <span class="summary-value" id="balance">R$ 0,00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico (placeholder para implementação real) -->
+                <div class="chart-container">
+                    <canvas id="history-chart"></canvas>
+                </div>
+
+                <!-- Tabela de Histórico -->
+                <div class="history-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Parceiro</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                                <th>Detalhes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-body">
+                            <!-- O histórico será carregado aqui via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Paginação -->
+                <div class="pagination">
+                    <button disabled><i class="fas fa-chevron-left"></i></button>
+                    <span class="page-info">Página 1 de 1</span>
+                    <button disabled><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Exportação -->
+    <div id="export-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Exportar Histórico</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="export-form">
+                    <div class="form-group">
+                        <label for="export-format">Formato:</label>
+                        <select id="export-format" required>
+                            <option value="csv">CSV</option>
+                            <option value="excel">Excel</option>
+                            <option value="pdf">PDF</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="export-period">Período:</label>
+                        <select id="export-period" required>
+                            <option value="current">Página atual</option>
+                            <option value="all">Todo o histórico</option>
+                            <option value="custom">Personalizado</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="custom-date-range" style="display: none;">
+                        <label for="export-start">De:</label>
+                        <input type="date" id="export-start">
+                        
+                        <label for="export-end">Até:</label>
+                        <input type="date" id="export-end">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary close-modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Exportar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../public/js/script.js"></script>
+</body>
+</html>

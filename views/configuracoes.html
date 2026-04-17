@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - TradeLink</title>
+
+    <!-- Ícones e CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/configuracoes.css">
+
+    <!-- JS com defer -->
+    <script src="../public/js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="pagina-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="TradeLink Logo">
+            </div>
+            <nav>
+                <ul>
+
+                    <li ><a href="inicial.html"><i class="fas fa-home"></i> Produtos</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="fornecedores.html"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="pedidos.html"><i class="fas fa-file-invoice"></i> Pedidos/Vendas</a></li>
+                    <li><a href="historico.html"><i class="fas fa-history"></i> Histórico</a></li>
+                    <li><a href="chat.html"><i class="fas fa-robot"></i> Chat IA</a></li>
+                    <li><a href="mensagens.html"><i class="fas fa-envelope"></i> Mensagens</a></li>
+                    <li><a href="categoria.html"><i class="fas fa-tags"></i> Categorias</a></li>
+                    <li class="active"> <a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                </ul>
+
+          
+
+            </nav>
+
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <header>
+                <h1><i class="fas fa-cog"></i> Configurações</h1>
+                <div class="user-info">
+                    <span id="header-user-name">TradeLink</span>
+                    <img id="header-user-pic" src="images/profile.jpg" alt="Foto do Usuário">
+                </div>
+            </header>
+
+            <div class="content">
+
+                <!-- Navegação das configurações -->
+                <div class="settings-nav">
+                    <button class="settings-nav-btn active" data-target="conta"><i class="fas fa-user"></i>
+                        Conta</button>
+                    <button class="settings-nav-btn" data-target="privacidade"><i class="fas fa-lock"></i>
+                        Privacidade</button>
+                    <button class="settings-nav-btn" data-target="notificacoes"><i class="fas fa-bell"></i>
+                        Notificações</button>
+                    <button class="settings-nav-btn" data-target="idioma"><i class="fas fa-globe"></i> Idioma</button>
+                    <button class="settings-nav-btn" data-target="ajuda"><i class="fas fa-question-circle"></i>
+                        Ajuda</button>
+                </div>
+
+                <!-- Formulário de configurações -->
+                <div class="settings-content">
+                    <form id="settings-form" method="POST" action="salvarConfiguracoes">
+
+                        <!-- Seção Conta -->
+                        <section class="content-section active" id="conta">
+                            <h2 class="section-title"><i class="fas fa-user"></i> Conta</h2>
+                            <div class="section-content">
+                                <div class="form-group">
+                                    <label>Informações da Conta:</label>
+                                    <div class="account-info">
+                                        <div class="info-item">
+                                            <span class="info-label">Nome:</span>
+                                            <span class="info-value" id="account-info">TechSupply Ltda</span>
+
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Email:</span>
+                                            <span class="info-value" id="account-info">contato@techsupply.com.br</span>
+
+
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">CPF/CNPJ</span>
+                                            <span class="info-value" id="account-info">12.345.678/0001-99</span>
+
+
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Localização:</span>
+                                            <span class="info-value" id="account-info">Belo Horizonte, MG</span>
+
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Telefone:</span><br>
+                                            <span class="info-value" id="account-info">(31) 99999-0000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Alterar Senha:</label>
+                                    <div class="password-change">
+                                        <button type="button" class="btn btn-secondary" id="change-password-btn">
+                                            <i class="fas fa-key"></i> Alterar Senha
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Seção Privacidade -->
+                        <section class="content-section" id="privacidade">
+                            <h2 class="section-title"><i class="fas fa-lock"></i> Privacidade</h2>
+                            <div class="section-content">
+                                <div class="privacy-option">
+                                    <h3><i class="fas fa-eye"></i> Visibilidade do Perfil</h3>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="visibility" value="public" checked><span class="radio-custom"></span>Público</label>
+                                        <label><input type="radio" name="visibility" value="friends"><span class="radio-custom"></span>Somente amigos</label>
+                                        <label><input type="radio" name="visibility" value="private"><span class="radio-custom"></span>Privado</label>
+                                    </div>
+                                </div>
+
+                                <div class="privacy-option">
+                                    <h3><i class="fas fa-database"></i> Controle de Dados</h3>
+                                    <div class="checkbox-group">
+                                        <label><input type="checkbox" name="data_sharing" checked><span class="checkbox-custom"></span>Permitir compartilhamento de dados anônimos</label>
+                                        <label><input type="checkbox" name="show_activity" checked><span class="checkbox-custom"></span>Mostrar atividade recente</label>
+                                        <label><input type="checkbox" name="search_visibility"><span class="checkbox-custom"></span>Permitir aparecer em buscas</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Seção Notificações -->
+                        <section class="content-section" id="notificacoes">
+                            <h2 class="section-title"><i class="fas fa-bell"></i> Notificações</h2>
+                            <div class="section-content">
+                                <div class="notification-option">
+                                    <h3><i class="fas fa-envelope-open-text"></i> Tipos de Notificação</h3>
+                                    <div class="checkbox-group">
+                                        <label><input type="checkbox" name="notify_messages" checked><span class="checkbox-custom"></span> Mensagens diretas</label>
+                                        <label><input type="checkbox" name="notify_mentions"><span class="checkbox-custom"></span> Menções</label>
+                                        <label><input type="checkbox" name="notify_updates" checked><span class="checkbox-custom"></span>Atualizações do sistema</label>
+                                        <label><input type="checkbox" name="notify_comments"><span class="checkbox-custom"></span> Comentários</label>
+                                    </div>
+                                </div>
+
+                                <div class="notification-option">
+                                    <h3><i class="fas fa-sliders-h"></i> Preferências</h3>
+                                    <div class="checkbox-group">
+
+                                        <label><input type="checkbox" name="important_only"><span class="radio-custom"></span>Somente notificações importantes</label>
+                                        <label><input type="checkbox" name="email_notifications" checked><span class="radio-custom"></span>Notificações por email</label>
+                                        <label><input type="checkbox" name="push_notifications"><span class="radio-custom"></span>Notificações push</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Seção Idioma -->
+                        <section class="content-section" id="idioma">
+                            <h2 class="section-title"><i class="fas fa-globe"></i> Idioma</h2>
+                            <div class="section-content">
+                                <div class="language-option">
+                                    <label for="language-select"><i class="fas fa-language"></i> Idioma:</label>
+                                    <select id="language-select" name="language" class="styled-select">
+                                        <option value="pt-br" selected>Português (Brasil)</option>
+                                        <option value="en-us">English (US)</option>
+                                        <option value="es-es">Español</option>
+                                        <option value="fr-fr">Français</option>
+                                        <option value="de-de">Deutsch</option>
+                                    </select>
+                                </div>
+
+                                <div class="language-option">
+                                    <h3><i class="far fa-clock"></i> Formato de Data/Hora</h3>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="datetime_format" value="24h" checked><span class="radio-custom"></span> 24 horas</label>
+                                        <label><input type="radio" name="datetime_format" value="12h"><span class="radio-custom"></span> 12 horas</label>
+                                    </div>
+                                </div>
+
+                                <div class="language-option">
+                                    <h3><i class="fas fa-map-marker-alt"></i> Região</h3>
+                                    <label for="timezone-select">Fuso horário:</label>
+                                    <select id="timezone-select" name="timezone" class="styled-select">
+                                        <option value="-3" selected>Brasília (UTC-03:00)</option>
+                                        <option value="-4">Manaus (UTC-04:00)</option>
+                                        <option value="-5">Rio Branco (UTC-05:00)</option>
+                                        <option value="0">Londres (UTC±00:00)</option>
+                                        <option value="1">Paris (UTC+01:00)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Seção Ajuda -->
+                        <section class="content-section" id="ajuda">
+                            <h2 class="section-title"><i class="fas fa-question-circle"></i> Ajuda</h2>
+                            <div class="section-content">
+                                <div class="help-option">
+                                    <h3><i class="fas fa-book"></i> Documentação</h3>
+                                    <p>Consulte nossa <a href="#"><i class="fas fa-external-link-alt"></i> documentação
+                                            completa</a>.</p>
+                                </div>
+
+                                <div class="help-option">
+                                    <h3><i class="fas fa-headset"></i> Suporte</h3>
+                                    <p>Entre em contato com nossa equipe:</p>
+                                    <ul class="contact-list">
+                                        <li><i class="fas fa-envelope"></i> Email: <a
+                                                href="mailto:suporte@tradelink.com">suporte@tradelink.com</a></li>
+                                        <li><i class="fas fa-phone"></i> Telefone: (31) 97504-4314</li>
+                                        <li><i class="fas fa-comment-dots"></i> Chat online: Disponível 24/7</li>
+                                    </ul>
+                                </div>
+
+                                <div class="help-option">
+                                    <h3><i class="fas fa-file-contract"></i> Termos e Políticas</h3>
+                                    <ul class="documents-list">
+                                        <li><a href="#"><i class="fas fa-file-alt"></i> Termos de Serviço</a><span
+                                                class="doc-date">Atualizado: 15/06/2023</span></li>
+                                        <li><a href="#"><i class="fas fa-user-shield"></i> Política de
+                                                Privacidade</a><span class="doc-date">Atualizado: 20/05/2023</span></li>
+                                        <li><a href="#"><i class="fas fa-users"></i> Diretrizes da Comunidade</a><span
+                                                class="doc-date">Atualizado: 10/07/2023</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Botões -->
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="cancel-btn"><i class="fas fa-times"></i>
+                                Cancelar</button>
+                            <button type="submit" class="btn btn-primary" id="save-btn"><i class="fas fa-save"></i>
+                                Salvar Alterações</button>
+                            <div class="status-message" id="status-message"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal de Senha -->
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Alterar Senha</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form action="alterarSenha" method="post">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="current-password">Senha Atual:</label>
+                        <input id="current-password" type="password" name="current_password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Nova Senha:</label>
+                        <input id="new-password" type="password" name="new_password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirmar Nova Senha:</label>
+                        <input id="confirm-password" type="password" name="confirm_password" required>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel-password-btn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="save-password-btn">Salvar Senha</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Operação realizada com sucesso!</span>
+    </div>
+</body>
+
+</html>
