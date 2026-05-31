@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="../public/css/registro.css">
-    <script src="../public/js/script.js"></script>
 </head>
 
 <body>
@@ -286,39 +285,7 @@
         </div>
     </dialog>
     <!-- AUTO-INJECT:LS-FLOW -->
-    <script>
-
-        // AUTO-INJECT: Registro -> LocalStorage -> redirect
-        (function () {
-            const form = document.getElementById("register");
-            if (form) {
-                form.addEventListener("submit", function (e) {
-                    
-                    const tipo = document.getElementById("tipoCadastro")?.value || "fornecedor";
-                    const nome = document.getElementById("nomeCompleto")?.value || "";
-                    const email = document.getElementById("email")?.value || "";
-                    const senha = document.getElementById("senha")?.value || "";
-                    const cpf = document.getElementById("cpf")?.value || "";
-                    if (!nome || !email || !senha) {
-                        alert("Preencha nome, email e senha.");
-                        return;
-                    }
-                });
-
-                // Botões de seleção de tipo (se existirem)
-                document.querySelectorAll(".typeOption").forEach(el => {
-                    el.addEventListener("click", () => {
-                        document.querySelectorAll(".typeOption").forEach(x => x.classList.remove("selected"));
-                        el.classList.add("selected");
-                        const type = el.getAttribute("data-type") || "fornecedor";
-                        const hidden = document.getElementById("tipoCadastro");
-                        if (hidden) hidden.value = type;
-                    });
-                });
-            }
-        })();
-
-    </script>
+    <script src="../public/js/auth.js"></script>
+    <script src="../public/js/registro.js"></script>
 </body>
-
 </html>

@@ -123,8 +123,7 @@
                         </button>
                     </div>
                 </form>
-                <div class="form-section">
-                        <h2>Produtos do Fornecedor</h2>
+                <div class="form-section" id="secao-produtos">
                         <div class="products-section">
                             <div class="products-carousel">
                                 <button class="carousel-button carousel-button-prev"><i class="fas fa-chevron-left"></i></button>
@@ -240,15 +239,15 @@
     </div>
 
     <!-- Modal para Editar Produto -->
-    <form id="formEditProduct" method="POST">
-        <div id="edit-product-modal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>Editar Produto</h2>
-                    <span class="close">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" id="edit-product-id" name="id_produto">
+    <div id="edit-product-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Produto</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="formEditProduct" method="POST">
+                <input type="hidden" id="edit-product-id" name="id_produto">
                     <div class="form-group">
                         <label for="edit-product-name">Nome do Produto:</label>
                         <input id="edit-product-name" type="text" name="nome_produto" required>
@@ -272,14 +271,14 @@
                             <option value="outros">Outros</option>
                         </select>
                     </div>
-                </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="fecharModalEdicao()">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-edit-btn">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                 </div>
+                </form>
             </div>
         </div>
-    </form>
+    </div>
 
     <!-- Modal de Visualização/Edição do Produto -->
     <div id="product-view-modal" class="modal">
@@ -324,6 +323,7 @@
         <span id="toast-message">Operação realizada com sucesso!</span>
     </div>
 
+    <script src="../public/js/auth.js"></script>
+    <script src="../public/js/fornecedores.js"></script>
 </body>
-
 </html>
