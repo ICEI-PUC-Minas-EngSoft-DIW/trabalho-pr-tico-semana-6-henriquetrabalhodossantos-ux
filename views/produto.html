@@ -15,7 +15,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a href="inicial.html"><i class="fas fa-home"></i> Início</a></li>
+					<li class="active"><a href="homepage.html"><i class="fas fa-home"></i> Home</a></li>
 					<li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
 					<li><a href="fornecedores.html"><i class="fas fa-user"></i> Perfil</a></li>
 					<li><a href="pedidos.html"><i class="fas fa-file-invoice"></i> Pedidos/Vendas</a></li>
@@ -44,54 +44,38 @@
 
 					<section class="product">
 						<div class="gallery">
-							<div class="main-img" id="mainImg">
-								<img src="https://via.placeholder.com/480x420?text=Notebook+Pro+15" alt="Notebook Pro 15" style="max-width:100%;max-height:100%;object-fit:contain">
+							<div class="main-img">
+								<img id="main-img" src="" alt="" style="max-width:100%;max-height:100%;object-fit:contain">
 							</div>
 						</div>
 
 						<div class="details">
-							<div class="title">Notebook Pro 15</div>
+							<div class="title" id="produto-nome"></div>
 							<div class="meta">
-								<div class="seller">Vendido por TechSupply Ltda</div>
+								<div class="seller" id="produto-fornecedor"></div>
 							</div>
-							<div class="price">R$ 3.499,00</div>
+							<div class="price" id="produto-preco"></div>
 							<div class="description">
-								<p>Notebook com processador Intel Core i7 de 11ª geração, 16GB de RAM DDR4, SSD NVMe de 512GB e tela Full HD de 15.6". Ideal para uso profissional e multitarefas.</p>
+								<p id="produto-descricao"></p>
 							</div>
 						</div>
 
 						<aside class="side">
-							<div class="info"><strong>Disponibilidade:</strong> Em estoque</div>
-							<div class="info"><strong>Categoria:</strong> Eletrônicos</div>
-							<div class="info"><strong>Contato:</strong> (31) 99999-0000</div>
+							<div class="info"><strong>Disponibilidade:</strong> <span id="produto-disponibilidade"></span></div>
+							<div class="info"><strong>Categoria:</strong> <span id="produto-categoria"></span></div>
+							<div class="info"><strong>Contato:</strong> <span id="produto-contato"></span></div>
 						</aside>
 					</section>
 
 					<section class="section">
 						<h3>Produtos relacionados</h3>
-						<div class="related">
-							<div class="card" style="cursor: pointer;">
-								<img src="https://via.placeholder.com/140?text=Mon" alt="Monitor 27" style="width:100%;height:90px;object-fit:cover;margin-bottom:8px">
-								<div style="font-size:14px;font-weight:600">Monitor 27" 4K</div>
-								<div style="color:var(--text);font-size:13px">R$ 2.150,00</div>
-							</div>
-							<div class="card" style="cursor: pointer;">
-								<img src="https://via.placeholder.com/140?text=Tec" alt="Teclado" style="width:100%;height:90px;object-fit:cover;margin-bottom:8px">
-								<div style="font-size:14px;font-weight:600">Teclado Mecânico</div>
-								<div style="color:var(--text);font-size:13px">R$ 420,00</div>
-							</div>
-							<div class="card" style="cursor: pointer;">
-								<img src="https://via.placeholder.com/140?text=Mou" alt="Mouse" style="width:100%;height:90px;object-fit:cover;margin-bottom:8px">
-								<div style="font-size:14px;font-weight:600">Mouse Sem Fio</div>
-								<div style="color:var(--text);font-size:13px">R$ 189,00</div>
-							</div>
-						</div>
+						<div class="related"></div>
 					</section>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<script src="../public/js/script.js" defer></script>
+	<script src="../public/js/produto.js"></script>
 </body>
 </html>

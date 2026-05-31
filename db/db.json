@@ -1,0 +1,106 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Notebook Pro 15",
+      "fornecedor": "TechSupply Ltda",
+      "preco": 3499.00,
+      "avaliacao": 5,
+      "avaliacoes": 127,
+      "categoria": "Eletrônicos",
+      "disponibilidade": "Em estoque",
+      "contato": "(31) 99999-0000",
+      "descricao": "Notebook com processador Intel Core i7 de 11ª geração, 16GB de RAM DDR4, SSD NVMe de 512GB e tela Full HD de 15.6\". Ideal para uso profissional e multitarefas.",
+      "imagem": "https://via.placeholder.com/480x420?text=Notebook+Pro+15",
+      "relacionados": [2, 3, 4]
+    },
+    {
+      "id": 2,
+      "nome": "Monitor 27\" 4K",
+      "fornecedor": "DisplayBR",
+      "preco": 2150.00,
+      "avaliacao": 5,
+      "avaliacoes": 56,
+      "categoria": "Eletrônicos",
+      "disponibilidade": "Em estoque",
+      "contato": "(11) 98888-1111",
+      "descricao": "Monitor 4K UHD de 27 polegadas com painel IPS, 144Hz e suporte HDR. Perfeito para design e produtividade.",
+      "imagem": "https://via.placeholder.com/480x420?text=Monitor+27+4K",
+      "relacionados": [1, 3, 4]
+    },
+    {
+      "id": 3,
+      "nome": "Teclado Mecânico",
+      "fornecedor": "GamerGear",
+      "preco": 420.00,
+      "avaliacao": 4,
+      "avaliacoes": 203,
+      "categoria": "Periféricos",
+      "disponibilidade": "Em estoque",
+      "contato": "(21) 97777-2222",
+      "descricao": "Teclado mecânico com switches Blue, retroiluminação RGB e layout ABNT2. Durável e responsivo para uso intenso.",
+      "imagem": "https://via.placeholder.com/480x420?text=Teclado+Mecanico",
+      "relacionados": [1, 2, 4]
+    },
+    {
+      "id": 4,
+      "nome": "Cadeira Ergonômica",
+      "fornecedor": "MóveisWork S.A.",
+      "preco": 890.00,
+      "avaliacao": 4,
+      "avaliacoes": 84,
+      "categoria": "Móveis",
+      "disponibilidade": "Em estoque",
+      "contato": "(11) 96666-3333",
+      "descricao": "Cadeira ergonômica com suporte lombar ajustável, apoio de braços 4D e assento em espuma de alta densidade.",
+      "imagem": "https://via.placeholder.com/480x420?text=Cadeira+Ergonomica",
+      "relacionados": [1, 2, 3]
+    },
+    {
+      "id": 5,
+      "nome": "Mouse Sem Fio",
+      "fornecedor": "TechSupply Ltda",
+      "preco": 189.00,
+      "avaliacao": 4,
+      "avaliacoes": 98,
+      "categoria": "Periféricos",
+      "disponibilidade": "Em estoque",
+      "contato": "(31) 99999-0000",
+      "descricao": "Mouse sem fio com sensor óptico de 1600 DPI, autonomia de 12 meses e receptor USB nano.",
+      "imagem": "https://via.placeholder.com/480x420?text=Mouse+Sem+Fio",
+      "relacionados": [1, 3, 2]
+    }
+  ],
+  "fornecedores": [
+    {
+      "id": 1,
+      "nome": "TechSupply Ltda",
+      "cidade": "Belo Horizonte",
+      "estado": "MG",
+      "avaliacao": 4.8,
+      "totalProdutos": 42,
+      "categorias": ["Eletrônicos", "Informática"],
+      "verificado": true
+    },
+    {
+      "id": 2,
+      "nome": "MóveisWork S.A.",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "avaliacao": 4.5,
+      "totalProdutos": 28,
+      "categorias": ["Móveis", "Escritório"],
+      "verificado": true
+    },
+    {
+      "id": 3,
+      "nome": "AgroFornece",
+      "cidade": "Uberlândia",
+      "estado": "MG",
+      "avaliacao": 4.2,
+      "totalProdutos": 15,
+      "categorias": ["Alimentos"],
+      "verificado": false
+    }
+  ]
+}
