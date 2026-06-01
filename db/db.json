@@ -1,5 +1,14 @@
 {
-  "usuarios": [],
+  "usuarios": [
+    {
+      "id": 1,
+      "tipo": "fornecedor",
+      "nome": "TechSupply Ltda",
+      "email": "teste@tradelink.com",
+      "senha": "123456",
+      "documento": "12.345.678/0001-99"
+    }
+  ],
   "produtos": [
     {
       "id": 1,
